@@ -12,17 +12,20 @@ func main() {
   fmt.Println("Also - Hello World; I am another line of code!")
 
   //Test for Environment variable
-  var MyEnvironmentVar string = os.Getenv(SETTING1)
-  if MyEnvironmentVar == nil {
-    fmt.Println("The Environment Variable is not defined. Using default value: TestValue")
+  var MyEnvironmentVar string = os.Getenv("SETTING1")
+
+  //If-else
+  if MyEnvironmentVar == "" {
     MyEnvironmentVar := "TestValue"
-  }
-  else {
+    fmt.Println("The Environment Variable is not defined. Using default value: ", MyEnvironmentVar)
+
+  } else {
     fmt.Println("The Environment Variable is defined. The value is: ", MyEnvironmentVar)
   }
 
   //String Interpolation
   fmt.Println("The value of my variable is ", MyInt)
+  fmt.Println("The SETTING1 configuration option is: ", MyEnvironmentVar)
 
   //Declare and define variables in the same line:
   var MyIntInc int = addition_func(MyInt)
