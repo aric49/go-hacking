@@ -1,6 +1,7 @@
 package main
 import "fmt"
 import "os"
+import "flag"
 
 //Main Function
 func main() {
@@ -24,6 +25,12 @@ func main() {
     fmt.Println("The Environment Variable is defined. The value is: ", MyEnvironmentVar)
   }
 
+  //CLI Flags
+  var cliInt = flag.Int("number", 0, "A Random Integer")
+  flag.Parse()
+
+  fmt.Println("The CLI option for -number is: ", evalInteger(cliInt))
+
   //String Interpolation
   fmt.Println("The SETTING1 configuration option is: ", MyEnvironmentVar)
 
@@ -38,4 +45,13 @@ func main() {
 //Define another function
 func addition_func(x int) int {
   return x+1
+}
+
+func evalInteger(integer_value int) string {
+  if integer_value > 10 {
+    return "The provided value is greater than 10"
+  } else if integer_value < 10 {
+    return "The provided value is less than 10!"
+  }
+  return ""
 }
