@@ -16,7 +16,8 @@ func main() {
 
   //If-else
   if MyEnvironmentVar == "" {
-    MyEnvironmentVar := "TestValue"
+    //Don't use := here since we are assinging a new value. Not initializing.
+    MyEnvironmentVar = "TestValue"
     fmt.Println("The Environment Variable is not defined. Using default value: ", MyEnvironmentVar)
 
   } else {
@@ -24,9 +25,9 @@ func main() {
   }
 
   //String Interpolation
-  fmt.Println("The value of my variable is ", MyInt)
   fmt.Println("The SETTING1 configuration option is: ", MyEnvironmentVar)
 
+  fmt.Println("The value of my variable is ", MyInt)
   //Declare and define variables in the same line:
   var MyIntInc int = addition_func(MyInt)
   fmt.Println("The incremented value of my variable is", MyIntInc)
