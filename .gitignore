@@ -2,3 +2,5 @@
 ##Binary Go Files:
 *hack
 *go
+#Other Files
+!*.go
