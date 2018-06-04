@@ -26,10 +26,17 @@ func main() {
   }
 
   //CLI Flags
-  var cliInt = flag.Int("number", 0, "A Random Integer")
+  // When defining CLI flags, variables must be initialized first and referenced in the flag. 
+  var cliInt int
+  var cliStr string
+  flag.IntVar(&cliInt, "number", 0, "A Random Integer")
+  flag.StringVar(&cliStr, "text", "default string", "A string value to use at the CLI")
   flag.Parse()
 
-  fmt.Println("The CLI option for -number is: ", evalInteger(cliInt))
+
+  // fmt.Println("Using a cli arg: ", cliInt)
+  fmt.Println("The CLI option for '--number' is: ", cliInt, " - ", evalInteger(cliInt))
+  fmt.Println("The CLI option for '--text' is: ", cliStr)
 
   //String Interpolation
   fmt.Println("The SETTING1 configuration option is: ", MyEnvironmentVar)

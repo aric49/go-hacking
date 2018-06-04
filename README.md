@@ -34,5 +34,20 @@ The Environment Variable is defined. The value is:  Hello Go!
 The SETTING1 configuration option is:  Hello Go!
 The value of my variable is  2
 The incremented value of my variable is 3
+```
+4. CLI Arguments can be sent using the `--number` flag and `--text` flag after building the projec to an executable:
 
+```
+$ go build hack.go
+$ chmod +x hack
+$ ./hack --number 8 --text "Hello World!"
+Hello World!  I am a Go Program!
+=========================================
+Also - Hello World; I am another line of code!
+The Environment Variable is not defined. Using default value:  TestValue
+The CLI option for '--number' is:  8  -  The provided value is less than 10!
+The CLI option for '--text' is:  Hello World!
+The SETTING1 configuration option is:  TestValue
+The value of my variable is  2
+The incremented value of my variable is 3
 ```
