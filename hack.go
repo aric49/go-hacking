@@ -1,6 +1,7 @@
 package main
 import "fmt"
 import "os"
+import "flag"
 
 //Main Function
 func main() {
@@ -24,6 +25,19 @@ func main() {
     fmt.Println("The Environment Variable is defined. The value is: ", MyEnvironmentVar)
   }
 
+  //CLI Flags
+  // When defining CLI flags, variables must be initialized first and referenced in the flag. 
+  var cliInt int
+  var cliStr string
+  flag.IntVar(&cliInt, "number", 0, "A Random Integer")
+  flag.StringVar(&cliStr, "text", "default string", "A string value to use at the CLI")
+  flag.Parse()
+
+
+  // fmt.Println("Using a cli arg: ", cliInt)
+  fmt.Println("The CLI option for '--number' is: ", cliInt, " - ", evalInteger(cliInt))
+  fmt.Println("The CLI option for '--text' is: ", cliStr)
+
   //String Interpolation
   fmt.Println("The SETTING1 configuration option is: ", MyEnvironmentVar)
 
@@ -38,4 +52,13 @@ func main() {
 //Define another function
 func addition_func(x int) int {
   return x+1
+}
+
+func evalInteger(integer_value int) string {
+  if integer_value > 10 {
+    return "The provided value is greater than 10"
+  } else if integer_value < 10 {
+    return "The provided value is less than 10!"
+  }
+  return ""
 }
