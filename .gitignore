@@ -1,0 +1,4 @@
+#Files to ignore:
+##Binary Go Files:
+*hack
+*go
