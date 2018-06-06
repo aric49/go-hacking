@@ -51,3 +51,10 @@ The SETTING1 configuration option is:  TestValue
 The value of my variable is  2
 The incremented value of my variable is 3
 ```
+
+## Run in Docker
+1. This project can also executed using a local Docker multistage build.   From the root of the repository, simply execute:
+
+```
+$ docker build -t hack:1 .
+```
