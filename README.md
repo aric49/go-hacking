@@ -1,5 +1,5 @@
 # go-hacking
-A demo repository for my adventures hacking around in Go to get familiar with the language.
+A demo repository for my adventures hacking around in Go to get familiar with the language. This project serves almost no purpose aside from me experimenting with how to implement various functions in `Go` including standard syntax, CLI flags, and sourcing configuration from environment variables. If you are a Go learner or experienced programmer, ideas or feedback are welcome. 
 
 ## How to Run:
 
