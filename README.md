@@ -1,5 +1,5 @@
 # go-hacking
-A demo repository for my adventures hacking around in Go to get familiar with the language.
+A demo repository for my adventures hacking around in Go to get familiar with the language. This project serves almost no purpose aside from me experimenting with how to implement various functions in `Go` including standard syntax, CLI flags, and sourcing configuration from environment variables. If you are a Go learner or experienced programmer, ideas or feedback are welcome. 
 
 ## How to Run:
 
@@ -50,4 +50,27 @@ The CLI option for '--text' is:  Hello World!
 The SETTING1 configuration option is:  TestValue
 The value of my variable is  2
 The incremented value of my variable is 3
+```
+
+## Run in Docker
+1. This project can also executed using a local Docker multistage build. This is helpful if you want to run and build the project without installing `Go`, but have a Docker daemon installed locally. From the root of the repository, simply execute:
+
+```
+$ docker build -t hack:1 .
+```
+
+Since the resulting Docker container builds running the `hack` executable, you can pass parameters and environment variables to the Docker container as you would the direct executable:
+
+```
+$ docker run -it -e SETTING1="Hello Go!" hack:1 --number 16 --text "Hello World"
+Hello World!  I am a Go Program!
+=========================================
+Also - Hello World; I am another line of code!
+The Environment Variable is defined. The value is:  Hello Go!
+The CLI option for '--number' is:  16  -  The provided value is greater than 10
+The CLI option for '--text' is:  Hello World
+The SETTING1 configuration option is:  Hello Go!
+The value of my variable is  2
+The incremented value of my variable is 3
+
 ```
